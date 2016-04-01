@@ -4,41 +4,37 @@
  * @author Liang <liang@maichong.it>
  */
 
-const service = __service;
+export default class CartItem extends service.Model {
 
-export default class Cart extends service.Model {
-
-  static label = 'Cart';
-  static defaultColumns = 'title,user,item,createdAt';
+  static label = 'Cart Item';
+  static defaultColumns = 'title,user,goods,sku,createdAt';
   static defaultSort = '-sort';
 
   static fields = {
     title: {
-      label: '标题',
+      label: 'Title',
       type: String,
       require: true
     },
     goods: {
-      label: '商品',
-      type: 'relationship',
-      ref: 'Goods'
+      label: 'Goods',
+      type: ['goods.Goods']
     },
     sku: {
       label: 'SKU',
-      type: 'relationship',
-      ref: 'Sku'
+      type: ['goods.Sku']
     },
     user: {
-      label: '用户',
-      type: 'relationship',
-      ref: 'User'
+      label: 'User',
+      type: ['user.User'],
+      index: true
     },
     quantity: {
-      label: '数量',
+      label: 'Quantity',
       type: Number
     },
     createdAt: {
-      label: '添加时间',
+      label: 'Created At',
       type: Date
     }
   };
