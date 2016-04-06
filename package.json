@@ -1,6 +1,6 @@
 {
   "name": "alaska-cart",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Alaska cart service",
   "main": "lib/index.js",
   "scripts": {
@@ -36,6 +36,6 @@
     "rimraf": "^2.5.2"
   },
   "dependencies": {
-    "alaska-goods": "^0.6.0"
+    "alaska-goods": "^0.7.0"
   }
 }
