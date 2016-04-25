@@ -29,6 +29,10 @@ export default class CartItem extends service.Model {
       type: ['user.User'],
       index: true
     },
+    pic:{
+      label:'Main image',
+      type:'image'
+    },
     quantity: {
       label: 'Quantity',
       type: Number
