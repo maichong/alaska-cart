@@ -1,7 +1,11 @@
 {
   "name": "alaska-cart",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Alaska cart service",
+  "keywords": [
+    "alaska",
+    "alaska-service"
+  ],
   "main": "lib/index.js",
   "scripts": {
     "build": "babel ./src --out-dir ./lib",
@@ -24,9 +28,9 @@
   },
   "homepage": "https://github.com/maichong/alaska-cart#readme",
   "peerDependencies": {
-    "alaska": "^0.8.2"
+    "alaska": "^0.9.0"
   },
   "dependencies": {
-    "alaska-goods": "^0.8.0"
+    "alaska-goods": "^0.9.0"
   }
 }
