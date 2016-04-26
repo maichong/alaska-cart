@@ -24,14 +24,24 @@ export default class CartItem extends service.Model {
       label: 'SKU',
       type: ['goods.Sku']
     },
+    skuName:{
+      label:'SKU name',
+      type:String
+    },
     user: {
       label: 'User',
       type: ['user.User'],
       index: true
     },
-    pic:{
-      label:'Main image',
-      type:'image'
+    pic: {
+      label: 'Main image',
+      type: String
+    },
+    price: {
+      label: 'Price',
+      type: Number,
+      default: 0,
+      format: '0.00'
     },
     quantity: {
       label: 'Quantity',
