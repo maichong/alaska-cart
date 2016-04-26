@@ -7,7 +7,7 @@
 export default class CartItem extends service.Model {
 
   static label = 'Cart Item';
-  static defaultColumns = 'title,user,goods,sku,createdAt';
+  static defaultColumns = 'title user goods sku createdAt';
   static defaultSort = '-sort';
 
   static fields = {
