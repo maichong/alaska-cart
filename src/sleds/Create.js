@@ -45,7 +45,7 @@ export default class Create extends service.Sled {
     if (quantity) {
       record.quantity = quantity;
     }
-    record.pic = sku ? sku.pic : goods.pic;
+    record.pic = sku && sku.pic ? sku.pic : goods.pic;
     record.title = goods.title;
     record.currency = goods.currency;
     record.price = sku ? sku.price : goods.price;
