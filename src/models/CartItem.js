@@ -4,13 +4,28 @@
  * @author Liang <liang@maichong.it>
  */
 
+const BALANCE = alaska.service('alaska-balance');
+
 export default class CartItem extends service.Model {
 
   static label = 'Cart Item';
-  static defaultColumns = 'title user goods sku createdAt';
+  static defaultColumns = 'pic title user goods price sku createdAt';
   static defaultSort = '-sort';
+  static noedit = true;
+  static nocreate = true;
+  static perPage = 100;
+
+  static api = {
+    list: 3,
+    create: 3,
+    remove: 3
+  };
 
   static fields = {
+    pic: {
+      label: 'Picture',
+      type: 'image'
+    },
     title: {
       label: 'Title',
       type: String,
@@ -18,24 +33,28 @@ export default class CartItem extends service.Model {
     },
     goods: {
       label: 'Goods',
-      type: ['goods.Goods']
+      ref: 'goods.Goods'
     },
     sku: {
       label: 'SKU',
-      type: ['goods.Sku']
+      ref: 'goods.Sku'
     },
-    skuName:{
-      label:'SKU name',
-      type:String
+    skuDesc: {
+      label: 'SKU Desc',
+      type: String
     },
     user: {
       label: 'User',
-      type: ['user.User'],
-      index: true
+      ref: 'user.User',
+      index: true,
+      private: true
     },
-    pic: {
-      label: 'Main image',
-      type: String
+    currency: {
+      label: 'Currency',
+      type: 'select',
+      options: BALANCE.currencies,
+      default: BALANCE.defaultCurrency.value,
+      group: 'price'
     },
     price: {
       label: 'Price',
@@ -43,9 +62,16 @@ export default class CartItem extends service.Model {
       default: 0,
       format: '0.00'
     },
+    discount: {
+      label: 'Discount',
+      type: Number,
+      default: 0,
+      format: '0.00'
+    },
     quantity: {
       label: 'Quantity',
-      type: Number
+      type: Number,
+      default: 1
     },
     createdAt: {
       label: 'Created At',

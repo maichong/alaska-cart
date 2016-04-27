@@ -11,4 +11,5 @@ export default {
   Price: 'Price',
   Discount: 'Discount',
   Currency: 'Currency',
+  'SKU Desc': 'SKU Desc'
 };
