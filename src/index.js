@@ -11,8 +11,8 @@ import alaska from 'alaska';
 export default class CartService extends alaska.Service {
   constructor(options, alaska) {
     options = options || {};
-    options.id = 'alaska-cart';
-    options.dir = __dirname;
+    options.dir = options.dir || __dirname;
+    options.id = options.id || 'alaska-cart';
     super(options, alaska);
   }
 }

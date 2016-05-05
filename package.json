@@ -28,9 +28,9 @@
   },
   "homepage": "https://github.com/maichong/alaska-cart#readme",
   "peerDependencies": {
-    "alaska": "^0.9.2"
+    "alaska": "^0.9.7"
   },
   "dependencies": {
-    "alaska-goods": "^0.9.0"
+    "alaska-goods": "^0.9.3"
   }
 }
