@@ -6,10 +6,10 @@
 
 export async function create(ctx) {
   if (!ctx.user) service.error(403);
-  let data = ctx.state.data || ctx.request.body;
-  let goodsId = data.goods;
+  let body = ctx.state.body || ctx.request.body;
+  let goodsId = body.goods || ctx.request.body.goods;
+  let skuId = body.sku || ctx.request.body.sku;
+  let quantity = body.quantity || ctx.request.body.quantity;
   if (!goodsId) service.error(400);
-  let skuId = data.sku;
-  let quantity = data.quantity;
   ctx.body = await service.run('Create', { user: ctx.user, goodsId, skuId, quantity });
 }

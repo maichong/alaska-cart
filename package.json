@@ -1,6 +1,6 @@
 {
   "name": "alaska-cart",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "Alaska cart service",
   "keywords": [
     "alaska",
@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/maichong/alaska-cart#readme",
   "peerDependencies": {
-    "alaska": "^0.9.7"
+    "alaska": "^0.9.8"
   },
   "dependencies": {
     "alaska-goods": "^0.9.3"
