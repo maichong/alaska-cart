@@ -4,11 +4,13 @@
  * @author Liang <liang@maichong.it>
  */
 
-const BALANCE = alaska.service('alaska-balance');
+import alaska from 'alaska';
+import BALANCE from 'alaska-balance';
 
-export default class CartItem extends service.Model {
+export default class CartItem extends alaska.Model {
 
   static label = 'Cart Item';
+  static icon = 'shopping-cart';
   static defaultColumns = 'pic title user goods price sku createdAt';
   static defaultSort = '-sort';
   static noedit = true;
@@ -33,11 +35,11 @@ export default class CartItem extends service.Model {
     },
     goods: {
       label: 'Goods',
-      ref: 'goods.Goods'
+      ref: 'alaska-goods.Goods'
     },
     sku: {
       label: 'SKU',
-      ref: 'goods.Sku'
+      ref: 'alaska-goods.Sku'
     },
     skuDesc: {
       label: 'SKU Desc',
@@ -45,7 +47,7 @@ export default class CartItem extends service.Model {
     },
     user: {
       label: 'User',
-      ref: 'user.User',
+      ref: 'alaska-user.User',
       index: true,
       private: true
     },

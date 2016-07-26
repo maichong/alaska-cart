@@ -4,11 +4,9 @@
  * @author Liang <liang@maichong.it>
  */
 
-'use strict';
-
 import alaska from 'alaska';
 
-export default class CartService extends alaska.Service {
+class CartService extends alaska.Service {
   constructor(options, alaska) {
     options = options || {};
     options.dir = options.dir || __dirname;
@@ -16,3 +14,5 @@ export default class CartService extends alaska.Service {
     super(options, alaska);
   }
 }
+
+export default new CartService();

@@ -4,11 +4,13 @@
  * @author Liang <liang@maichong.it>
  */
 
+import alaska from 'alaska';
+import service from '../';
 import CartItem from '../models/CartItem';
-const Goods = service.model('goods.Goods');
-const Sku = service.model('goods.Sku');
+import Goods from 'alaska-goods/models/Goods';
+import Sku from 'alaska-goods/models/Sku';
 
-export default class Create extends service.Sled {
+export default class Create extends alaska.Sled {
 
   /**
    * 加入购物车

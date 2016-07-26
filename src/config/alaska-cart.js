@@ -8,8 +8,8 @@ export default{
   prefix: '/cart',
   controllers: false,
   middlewares: false,
-  services: [
-    { id: 'alaska-user', alias: 'user' },
-    { id: 'alaska-goods', alias: 'goods' },
-  ]
+  services: {
+    'alaska-user': {},
+    'alaska-goods': {}
+  }
 };
